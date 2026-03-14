@@ -75,14 +75,14 @@ const steps = [
     imageAlt: 'Finalizado com sucesso'
   },
   {
-    title: 'Mentoria e Liderança Técnica: 2025',
+    title: 'Monitoria de Programação: 2025',
     description: 'Atuação como Monitor de Programação no IFSC, auxiliando alunos de fases anteriores e de ADS em temas complexos como manipulação de ponteiros e structs em linguagem C.',
     image: `${baseUrl}images/Monitoria.png`,
     imageAlt: 'Finalizado com sucesso'
   },
   {
     title: 'Desenvolvimento Mobile Flutter: 2025',
-    description: 'Liderança técnica no Projeto Integrador "Sprinter", utilizando Dart e Flutter. O projeto foi concluído antecipadamente e selecionado para apresentação na SNCT.',
+    description: 'Participante no Projeto Integrador "Sprinter", utilizando Dart e Flutter. O projeto foi concluído antecipadamente e selecionado para apresentação na SNCT.',
     image: `${baseUrl}images/Sprinter.png`,
     imageAlt: 'Finalizado com sucesso'
   },

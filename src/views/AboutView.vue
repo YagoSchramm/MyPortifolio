@@ -37,7 +37,7 @@ onBeforeUnmount(()=>{
 </script>
 
 <template>
-  <div class="about flex flex-col">
+  <div class="about flex flex-col w-full overflow-x-hidden">
     <AboutInformation />
       <p class="ml-12 mt-12 text-[38px] font-bold font-sans whitespace-nowrap">
           Roadmap
