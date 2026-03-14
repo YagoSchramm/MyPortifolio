@@ -1,0 +1,78 @@
+/* 1. Defina a animação de entrada */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(100px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 2. Aplique a lógica de scroll nos itens */
+.item {
+  /* O view() observa quando o elemento entra na área visível */
+  animation: reveal linear forwards;
+  animation-timeline: view();
+  
+  /* Ajuste para a animação não acabar logo que o item aparece */
+  /* O elemento anima entre 5% e 40% da altura da tela */
+  animation-range: entry 5% cover 40%;
+}
+
+/* Estilização básica para alinhar como na sua foto */
+.timeline {
+  position: relative;
+  padding: 50px 0;
+}
+
+.line {
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #e0e0e0; /* Cor da linha vazia */
+  transform: translateX(-50%);
+}
+
+.line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black; /* Cor do preenchimento */
+  transform-origin: top;
+  
+  /* A mágica acontece aqui */
+  animation: fill-line linear forwards;
+  animation-timeline: scroll(root); /* Monitora o scroll da página toda */
+}
+
+@keyframes fill-line {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+.item {
+  width: 50%;
+  padding: 20px;
+  position: relative;
+}
+
+.left { left: 0; text-align: right; }
+.right { left: 50%; text-align: left; }
+
+.dot {
+  position: absolute;
+  top: 30px;
+  width: 20px;
+  height: 20px;
+  background: black;
+  border-radius: 50%;
+}
+
+.left .dot { right: -10px; }
+.right .dot { left: -10px; }
