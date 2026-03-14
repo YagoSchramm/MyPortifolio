@@ -36,3 +36,17 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Deploy to GitHub Pages
+
+This project is configured to deploy automatically on every push to the `main` branch.
+
+1. Push the repo to GitHub (branch `main`).
+2. In GitHub, go to `Settings` → `Pages` and set:
+   - Source: `GitHub Actions`
+
+### Repo name
+
+The Vite `base` is set to `/MyPortifolio/`. If your repository name is different, update:
+
+- `vite.config.js`
