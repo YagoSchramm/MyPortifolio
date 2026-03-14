@@ -1,5 +1,5 @@
 <script setup>
-import useLucide from '../composables/useLucide'
+import useLucide from '../../composables/useLucide'
 
 useLucide()
 </script>

@@ -1,6 +1,6 @@
 <script setup>
-import Roadmap from '@/components/Roadmap.vue';
-import AboutInformation from '@/components/AboutInformation.vue';
+import Roadmap from '@/components/About/Roadmap.vue';
+import AboutInformation from '@/components/About/AboutInformation.vue';
 import gsap from 'gsap';
 import Lenis from 'lenis';
 import { onBeforeUnmount, onMounted } from 'vue';

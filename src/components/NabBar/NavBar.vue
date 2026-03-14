@@ -1,7 +1,7 @@
 <script setup>
-import NavBrand from './NavBrand.vue'
+import NavBrand from '../NabBar/NavBrand.vue'
 import NavLinks from './NavLinks.vue'
-import NavStatus from './NavStatus.vue'
+import NavStatus from '../NabBar/NavStatus.vue'
 </script>
 
 <template>

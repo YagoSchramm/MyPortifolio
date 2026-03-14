@@ -1,8 +1,8 @@
 <script setup>
 import { nextTick, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import NavBar from './components/NavBar.vue'
-import Loader from './components/Loader.vue'
+import NavBar from './components/NabBar/NavBar.vue'
+import Loader from './components/Home/Loader.vue'
 
 const route = useRoute()
 const isLoading = ref(true)

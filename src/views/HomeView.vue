@@ -1,6 +1,6 @@
 
 <script setup>
-import HomeHero from '../components/HomeHero.vue'
+import HomeHero from '@/components/Home/HomeHero.vue'
 </script>
 
 <template>

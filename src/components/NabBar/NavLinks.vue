@@ -2,7 +2,7 @@
 import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import gsap from 'gsap'
-import useLucide from '../composables/useLucide'
+import useLucide from '../../composables/useLucide'
 
 const route = useRoute()
 
@@ -10,6 +10,10 @@ const linksWrapRef = ref(null)
 const indicatorRef = ref(null)
 const homeRef = ref(null)
 const sobreRef = ref(null)
+const projetoRef= ref(null)
+const skillsRef = ref(null)
+const blogRef = ref(null)
+const contatoRef = ref(null)
 const hasSizedIndicator = ref(false)
 
 useLucide()
@@ -24,7 +28,18 @@ const moveIndicator = async () => {
   await nextTick()
   const indicator = getEl(indicatorRef)
   const wrap = getEl(linksWrapRef)
-  const target = route.path === '/sobre' ? getEl(sobreRef) : getEl(homeRef)
+  const target =
+    route.path === '/projetos'
+      ? getEl(projetoRef)
+      : route.path === '/sobre'
+        ? getEl(sobreRef)
+        : route.path === '/skills'
+          ? getEl(skillsRef)
+          : route.path === '/blog'
+            ? getEl(blogRef)
+            : route.path === '/contato'
+              ? getEl(contatoRef)
+              : getEl(homeRef)
 
   if (!indicator || !wrap || !target) return
 
@@ -88,7 +103,7 @@ watch(() => route.fullPath, moveIndicator)
         class="relative z-10 flex items-center gap-2 px-4 py-2 rounded-full"
         :class="route.path === '/' ? 'text-gray-900 font-medium' : 'text-gray-500 hover:text-gray-900'"
       >
-        <i data-lucide="home" class="w-4 h-4"></i>
+        <i data-lucide="home" class="w-5 h-5"></i>
         <span v-if="route.path === '/'">Home</span>
       </RouterLink>
       <RouterLink
@@ -97,24 +112,48 @@ watch(() => route.fullPath, moveIndicator)
         class="relative z-10 flex items-center gap-2 px-4 py-2 rounded-full"
         :class="route.path === '/sobre' ? 'text-gray-900 font-medium' : 'text-gray-500 hover:text-gray-900'"
       >
-        <i data-lucide="user" class="w-4 h-4"></i>
+        <i data-lucide="user" class="w-5 h-5"></i>
         <span v-if="route.path === '/sobre'">Sobre</span>
       </RouterLink>
-    </div>
-
-    <div class="flex items-center gap-1 px-2">
-      <a href="#" class="p-2.5 text-gray-500 hover:text-gray-900 transition" aria-label="Projetos">
+      <RouterLink
+        ref="projetoRef"
+        to="/projetos"
+        class="relative z-10 flex items-center gap-2 px-4 py-2 rounded-full"
+        :class="route.path === '/projetos' ? 'text-gray-900 font-medium' : 'text-gray-500 hover:text-gray-900'"
+      >
         <i data-lucide="briefcase" class="w-5 h-5"></i>
-      </a>
-      <a href="#" class="p-2.5 text-gray-500 hover:text-gray-900 transition" aria-label="Leituras">
+        <span v-if="route.path === '/projetos'">Projetos</span>
+      </RouterLink>
+      <RouterLink
+        ref="skillsRef"
+        to="/skills"
+        class="relative z-10 flex items-center gap-2 px-4 py-2 rounded-full"
+        :class="route.path === '/skills' ? 'text-gray-900 font-medium' : 'text-gray-500 hover:text-gray-900'"
+        aria-label="Skills"
+      >
         <i data-lucide="book-open" class="w-5 h-5"></i>
-      </a>
-      <a href="#" class="p-2.5 text-gray-500 hover:text-gray-900 transition" aria-label="Blog">
+        <span v-if="route.path === '/skills'">Skills</span>
+      </RouterLink>
+      <RouterLink
+        ref="blogRef"
+        to="/blog"
+        class="relative z-10 flex items-center gap-2 px-4 py-2 rounded-full"
+        :class="route.path === '/blog' ? 'text-gray-900 font-medium' : 'text-gray-500 hover:text-gray-900'"
+        aria-label="Blog"
+      >
         <i data-lucide="notebook-pen" class="w-5 h-5"></i>
-      </a>
-      <a href="#" class="p-2.5 text-gray-500 hover:text-gray-900 transition" aria-label="Contato">
+        <span v-if="route.path === '/blog'">Blog</span>
+      </RouterLink>
+      <RouterLink
+        ref="contatoRef"
+        to="/contato"
+        class="relative z-10 flex items-center gap-2 px-4 py-2 rounded-full"
+        :class="route.path === '/contato' ? 'text-gray-900 font-medium' : 'text-gray-500 hover:text-gray-900'"
+        aria-label="Contato"
+      >
         <i data-lucide="mail" class="w-5 h-5"></i>
-      </a>
+        <span v-if="route.path === '/contato'">Contato</span>
+      </RouterLink>
     </div>
   </div>
 </template>

@@ -1,9 +1,9 @@
 <script setup>
-import IconBadge from './IconBadge.vue'
-import IconActionButton from './IconActionButton.vue'
-import ProfileImageCard from './ProfileImageCard.vue'
-import SkillsGrid from './SkillsGrid.vue'
-import StatsGrid from './StatsGrid.vue'
+import IconBadge from '../Home/IconBadge.vue'
+import IconActionButton from '../Home/IconActionButton.vue'
+import ProfileImageCard from '../Home/ProfileImageCard.vue'
+import SkillsGrid from '../Home/SkillsGrid.vue'
+import StatsGrid from '../Home/StatsGrid.vue'
 import { onMounted } from 'vue'
 import gsap from 'gsap'
 
