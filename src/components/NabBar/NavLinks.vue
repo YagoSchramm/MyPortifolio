@@ -28,8 +28,9 @@ const moveIndicator = async () => {
   await nextTick()
   const indicator = getEl(indicatorRef)
   const wrap = getEl(linksWrapRef)
+  const isProjetos = route.path.startsWith('/projetos')
   const target =
-    route.path === '/projetos'
+    isProjetos
       ? getEl(projetoRef)
       : route.path === '/sobre'
         ? getEl(sobreRef)
@@ -119,10 +120,10 @@ watch(() => route.fullPath, moveIndicator)
         ref="projetoRef"
         to="/projetos"
         class="relative z-10 flex items-center gap-2 px-4 py-2 rounded-full"
-        :class="route.path === '/projetos' ? 'text-gray-900 font-medium' : 'text-gray-500 hover:text-gray-900'"
+        :class="route.path.startsWith('/projetos') ? 'text-gray-900 font-medium' : 'text-gray-500 hover:text-gray-900'"
       >
         <i data-lucide="briefcase" class="w-5 h-5"></i>
-        <span v-if="route.path === '/projetos'">Projetos</span>
+        <span v-if="route.path.startsWith('/projetos')">Projetos</span>
       </RouterLink>
       <RouterLink
         ref="skillsRef"

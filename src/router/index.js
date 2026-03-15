@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import ProjectView from '@/views/ProjectView.vue'
+import ProjectsDisplay from '@/components/Projects/ProjectsDisplay.vue'
+import ProjectsShowcase from '@/components/Projects/ProjectsShowcase.vue'
 import SkillsView from '@/views/SkillsView.vue'
 import BlogView from '@/views/BlogView.vue'
 import ContatoView from '@/views/ContatoView.vue'
@@ -22,6 +24,22 @@ const router = createRouter({
       path: '/projetos',
       name: 'projetos',
       component: ProjectView,
+      children: [
+        {
+          path: '',
+          redirect: { name: 'projetos-carrossel' },
+        },
+        {
+          path: 'carrossel',
+          name: 'projetos-carrossel',
+          component: ProjectsDisplay,
+        },
+        {
+          path: 'detalhe',
+          name: 'projetos-detalhe',
+          component: ProjectsShowcase,
+        },
+      ],
     },
     {
       path: '/skills',
