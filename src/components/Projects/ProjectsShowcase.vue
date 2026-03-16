@@ -10,7 +10,7 @@ const projects = ref([
   { id: 3, img: `${baseUrl}images/NodeApi.png`, title: 'Node.js CRUD', desc: 'Uma API REST básica com um CRUD de clientes e com front-end em pug e bootstrap.', language: 'TypeScript, Node, Express, Pug', githubUrl: 'https://github.com/YagoSchramm/NodeBasicApi', isOnline: false},
   { id: 4, img: `${baseUrl}images/MakeYourBurguer.png`, title: 'Make Your Burguer', desc: 'Uma aplicação de monitoramento de pedidos de uma hambúrgueria que permite a criação de um hamburguer ao estilo do cliente.', language: 'Vue, GSAP, JSON server', githubUrl: 'https://github.com/YagoSchramm/MakeYourBurguer', isOnline: false },
   { id: 5, img: `${baseUrl}images/MyChat.png`, title: 'MyChat', desc: 'Um aplicativo de mensagens focado em criar novas conexões e uma experiência de usuário aprimorada.', language: 'Flutter, Dart', githubUrl: 'https://github.com/YagoSchramm/MyChat', isOnline: false },
-  { id: 5, img: `${baseUrl}images/MyChatApi.png`, title: 'API MyChat', desc: 'Uma API com websocket desenvolvida para melhor experiência de usuário do aplicativo MyChat.', language: 'Go, Gin, PostgreSQL, Supabase', githubUrl: 'https://github.com/YagoSchramm/ApiMyChat', isOnline: false },
+  { id: 6, img: `${baseUrl}images/MyChatApi.png`, title: 'API MyChat', desc: 'Uma API com websocket desenvolvida para melhor experiência de usuário do aplicativo MyChat.', language: 'Go, Gin, PostgreSQL, Supabase', githubUrl: 'https://github.com/YagoSchramm/ApiMyChat', isOnline: false },
 ]);
 
 const currentIndex = ref(0);

@@ -7,11 +7,22 @@ import { onBeforeUnmount, onMounted } from 'vue';
 let lenis;
 let rafId;
 onMounted(()=>{
-  gsap.from(".about",{
-    opacity:0,
-    duration:0.8
-  });
-
+  const tl=gsap.timeline()
+   tl.from(".about",{
+x:-25,
+opacity:0,
+duration:1,
+  })
+  tl.from(".roadmap-title",{
+x:-25,
+opacity:0,
+duration:1.5,
+  })
+    tl.from(".roadmap-line",{
+x:-25,
+opacity:0,
+duration:1,
+  })
   lenis = new Lenis({
     smoothWheel: true,
     smoothTouch: false
@@ -39,11 +50,11 @@ onBeforeUnmount(()=>{
 <template>
   <div class="about flex flex-col w-full overflow-x-hidden">
     <AboutInformation />
-      <p class="ml-12 mt-12 text-[38px] font-bold font-sans whitespace-nowrap">
+      <p class="roadmap-title ml-12 mt-12 text-[38px] font-bold font-sans whitespace-nowrap">
           Roadmap
        </p>
     <div class="w-full flex justify-center">
-      <Roadmap />
+      <Roadmap class="roadmap-line"/>
     </div>
   </div>
 </template>

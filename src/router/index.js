@@ -7,6 +7,9 @@ import ProjectsShowcase from '@/components/Projects/ProjectsShowcase.vue'
 import SkillsView from '@/views/SkillsView.vue'
 import BlogView from '@/views/BlogView.vue'
 import ContatoView from '@/views/ContatoView.vue'
+import LoginView from '@/views/LoginView.vue'
+import AdminView from '@/views/AdminView.vue'
+import BlogPostView from '@/views/BlogPostView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -52,11 +55,35 @@ const router = createRouter({
       component: BlogView,
     },
     {
+      path: '/blog/:id',
+      name: 'blog-post',
+      component: BlogPostView,
+    },
+    {
       path: '/contato',
       name: 'contato',
       component: ContatoView,
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView,
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: AdminView,
+    },
   ],
+})
+
+router.beforeEach((to) => {
+  if (to.name === 'admin') {
+    const token = sessionStorage.getItem('token')
+    if (!token) {
+      return { name: 'login' }
+    }
+  }
 })
 
 export default router

@@ -1,12 +1,19 @@
 <script setup>
 import useLucide from '../../composables/useLucide'
 
+defineEmits(['toggle-drawer'])
+
 useLucide()
 </script>
 
 <template>
   <div class="flex items-center gap-4">
-    <button class="text-gray-600 p-2 rounded-lg" type="button" aria-label="Abrir menu">
+    <button
+      class="text-gray-600 p-2 rounded-lg"
+      type="button"
+      aria-label="Abrir menu"
+      @click="$emit('toggle-drawer')"
+    >
       <i data-lucide="menu" class="w-6 h-6"></i>
     </button>
 
