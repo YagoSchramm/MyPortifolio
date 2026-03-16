@@ -3,12 +3,15 @@ import { onMounted, onUnmounted, ref, nextTick } from 'vue';
 import { gsap } from 'gsap';
 import ProjectCard from './ProjectCard.vue';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const items = ref([
-  { id: 1, img: 'https://picsum.photos/400/500?1', title: 'Deserto', desc: 'Areias infinitas.', language: 'Vue', githubUrl: 'https://github.com/', isOnline: true },
-  { id: 2, img: 'https://picsum.photos/400/500?2', title: 'Floresta', desc: 'Verde profundo.', language: 'JavaScript', githubUrl: 'https://github.com/', isOnline: false },
-  { id: 3, img: 'https://picsum.photos/400/500?3', title: 'Folha', desc: 'Detalhes da natureza.', language: 'TypeScript', githubUrl: 'https://github.com/', isOnline: true },
-  { id: 4, img: 'https://picsum.photos/400/500?4', title: 'Neve', desc: 'Inverno rigoroso.', language: 'CSS', githubUrl: 'https://github.com/', isOnline: false },
-  { id: 5, img: 'https://picsum.photos/400/500?5', title: 'Canyon', desc: 'Rochas antigas.', language: 'HTML', githubUrl: 'https://github.com/', isOnline: true },
+  { id: 1, img: `${baseUrl}images/Sprinter.png`, title: 'Sprinter', desc: 'Um aplicativo de monitoramento de atividades físicas focado na sustentabilidade, onde você pode realizar atividades, e com os pontos adiquiridos pelas atividades e comprar ingressos', language: 'Flutter, Dart, Firebase', githubUrl: 'https://github.com/Yago3108/Sprinter', isOnline: false },
+  { id: 2, img: `${baseUrl}images/GoApi.png`, title: 'GO CRUD', desc: 'Uma API REST básica com um CRUD de produtos e com deploy via Docker.', language: 'GO, Gin, PostgreSQL', githubUrl: 'https://github.com/YagoSchramm/BasicGoApi', isOnline: true },
+  { id: 3, img: `${baseUrl}images/NodeApi.png`, title: 'Node.js CRUD', desc: 'Uma API REST básica com um CRUD de clientes e com front-end em pug e bootstrap.', language: 'TypeScript, Node, Express, Pug', githubUrl: 'https://github.com/YagoSchramm/NodeBasicApi', isOnline: false},
+  { id: 4, img: `${baseUrl}images/MakeYourBurguer.png`, title: 'Make Your Burguer', desc: 'Uma aplicação de monitoramento de pedidos de uma hambúrgueria que permite a criação de um hamburguer ao estilo do cliente.', language: 'Vue, GSAP, JSON server', githubUrl: 'https://github.com/YagoSchramm/MakeYourBurguer', isOnline: false },
+  { id: 5, img: `${baseUrl}images/MyChat.png`, title: 'MyChat', desc: 'Um aplicativo de mensagens focado em criar novas conexões e uma experiência de usuário aprimorada.', language: 'Flutter, Dart', githubUrl: 'https://github.com/YagoSchramm/MyChat', isOnline: false },
+  { id: 5, img: `${baseUrl}images/MyChatApi.png`, title: 'API MyChat', desc: 'Uma API com websocket desenvolvida para melhor experiência de usuário do aplicativo MyChat.', language: 'Go, Gin, PostgreSQL, Supabase', githubUrl: 'https://github.com/YagoSchramm/ApiMyChat', isOnline: false },
 ]);
 const doubledItems = ref([...items.value, ...items.value]);
 
@@ -77,9 +80,9 @@ const setInfoRef = (id, el) => {
 };
 
 onMounted(() => {
-  // Configuracao inicial de perspectiva igual para todos
+
   gsap.set('.card', {
-    rotationY: -22, // inclinacao leve como a segunda imagem
+    rotationY: -22, 
     transformPerspective: 1000,
     force3D: true,
   });
@@ -109,7 +112,6 @@ const handleCardClick = async (item, key, event) => {
   const wrapX = wrapXRef.value;
 
   if (activeKey.value === key) {
-    // Fecha o card ativo e volta a rodar
     activeKey.value = null;
     activeItem.value = null;
     isPaused.value = false;
@@ -124,8 +126,6 @@ const handleCardClick = async (item, key, event) => {
     activeCardEl = null;
     return;
   }
-
-  // Troca o card ativo
   if (activeCardEl) {
     gsap.to(activeCardEl, { rotationY: -22, scale: 1, z: 0, duration: 0.4 });
   }
@@ -302,3 +302,4 @@ const handleCardClick = async (item, key, event) => {
   }
 }
 </style>
+

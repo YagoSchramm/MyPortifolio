@@ -3,34 +3,14 @@ import { computed, ref } from 'vue';
 import ProjectCard from './ProjectCard.vue';
 import ProjectsArrowButton from './ProjectsArrowButton.vue';
 
+const baseUrl = import.meta.env.BASE_URL;
 const projects = ref([
-  {
-    id: 1,
-    img: 'https://picsum.photos/600/800?1',
-    title: 'Deserto',
-    desc: 'Areias infinitas.',
-    language: 'Vue',
-    githubUrl: 'https://github.com/',
-    isOnline: true,
-  },
-  {
-    id: 2,
-    img: 'https://picsum.photos/600/800?2',
-    title: 'Floresta',
-    desc: 'Verde profundo.',
-    language: 'JavaScript',
-    githubUrl: 'https://github.com/',
-    isOnline: false,
-  },
-  {
-    id: 3,
-    img: 'https://picsum.photos/600/800?3',
-    title: 'Folha',
-    desc: 'Detalhes da natureza.',
-    language: 'TypeScript',
-    githubUrl: 'https://github.com/',
-    isOnline: true,
-  },
+ { id: 1, img: `${baseUrl}images/Sprinter.png`, title: 'Sprinter', desc: 'Um aplicativo de monitoramento de atividades físicas focado na sustentabilidade, onde você pode realizar atividades, e com os pontos adiquiridos pelas atividades e comprar ingressos', language: 'Flutter, Dart, Firebase', githubUrl: 'https://github.com/Yago3108/Sprinter', isOnline: false },
+  { id: 2, img: `${baseUrl}images/GoApi.png`, title: 'GO CRUD', desc: 'Uma API REST básica com um CRUD de produtos e com deploy via Docker.', language: 'GO, Gin, PostgreSQL', githubUrl: 'https://github.com/YagoSchramm/BasicGoApi', isOnline: true },
+  { id: 3, img: `${baseUrl}images/NodeApi.png`, title: 'Node.js CRUD', desc: 'Uma API REST básica com um CRUD de clientes e com front-end em pug e bootstrap.', language: 'TypeScript, Node, Express, Pug', githubUrl: 'https://github.com/YagoSchramm/NodeBasicApi', isOnline: false},
+  { id: 4, img: `${baseUrl}images/MakeYourBurguer.png`, title: 'Make Your Burguer', desc: 'Uma aplicação de monitoramento de pedidos de uma hambúrgueria que permite a criação de um hamburguer ao estilo do cliente.', language: 'Vue, GSAP, JSON server', githubUrl: 'https://github.com/YagoSchramm/MakeYourBurguer', isOnline: false },
+  { id: 5, img: `${baseUrl}images/MyChat.png`, title: 'MyChat', desc: 'Um aplicativo de mensagens focado em criar novas conexões e uma experiência de usuário aprimorada.', language: 'Flutter, Dart', githubUrl: 'https://github.com/YagoSchramm/MyChat', isOnline: false },
+  { id: 5, img: `${baseUrl}images/MyChatApi.png`, title: 'API MyChat', desc: 'Uma API com websocket desenvolvida para melhor experiência de usuário do aplicativo MyChat.', language: 'Go, Gin, PostgreSQL, Supabase', githubUrl: 'https://github.com/YagoSchramm/ApiMyChat', isOnline: false },
 ]);
 
 const currentIndex = ref(0);
