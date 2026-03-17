@@ -1,5 +1,5 @@
 <template>
-  <div ref="containerRef" class="container py-20 items-center">
+  <div ref="containerRef" class="container py-20 items-center px-6 md:px-12 lg:px-16">
     <div class="relative max-w-2xl mx-auto">
       
       <div

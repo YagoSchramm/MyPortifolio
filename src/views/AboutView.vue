@@ -53,7 +53,7 @@ onBeforeUnmount(()=>{
       <p class="roadmap-title ml-12 mt-12 text-[38px] font-bold font-sans whitespace-nowrap">
           Roadmap
        </p>
-    <div class="w-full flex justify-center">
+    <div class="w-full pl-10 pr-10 flex justify-center">
       <Roadmap class="roadmap-line"/>
     </div>
   </div>

@@ -2,7 +2,7 @@
 import { onMounted, ref } from "vue"
 import PostCard from "@/components/Blog/PostCard.vue"
 import { listPostsPage } from "@/features/firebase/posts/posts"
-
+import gsap from "gsap"
 const posts = ref([])
 const isLoading = ref(false)
 const loadError = ref("")
@@ -11,6 +11,7 @@ const lastDoc = ref(null)
 const hasMore = ref(true)
 
 const loadPosts = async () => {
+
   isLoading.value = true
   loadError.value = ""
   try {
@@ -44,11 +45,13 @@ const handleLoadMore = async () => {
   }
 }
 
-onMounted(loadPosts)
+onMounted(
+ loadPosts
+)
 </script>
 
 <template>
-  <div class="px-6 py-10">
+  <div class="main-container px-6 py-8">
     <h1 class="text-[38px] font-bold font-sans">Blog</h1>
 
     <p v-if="loadError" class="mt-4 text-sm text-red-500">{{ loadError }}</p>
