@@ -24,19 +24,6 @@ const data = {
   
     
     ],
-    ranking: [
-      { name: "VS code",percent: 98, icon: "devicon-vscode-plain" },
-      { name: "MySQL",percent: 97, icon: "devicon-mysql-original" },
-      { name: "DBeaver",percent: 97, icon: "devicon-dbeaver-plain" },
-      { name: "GitHub",percent: 95, icon: "devicon-github-original" },
-      { name: "Insomnia",percent: 95, icon: "devicon-insomnia-plain" },   
-      { name: "PostgreSQL",percent: 93, icon: "devicon-postgresql-plain" },
-      { name: "AndroidStudio",percent: 85, icon: "devicon-androidstudio-plain" },
-      { name: "Firebase",percent: 75, icon: "devicon-firebase-plain" },
-      { name: "Docker",percent: 70, icon: "devicon-docker-plain" },
-      { name: "Supabase",percent: 65, icon: "devicon-supabase-plain" },
-  
-    ]
   }
 }
 
@@ -55,14 +42,6 @@ const current = computed(() => data[props.type] || data.frameworks)
       </p>
 
       <SkillsList :items="current.skills"/>
-    </div>
-
-    <div>
-      <p class="text-2xl font-semibold mb-6">
-        Nível de Proficiência
-      </p>
-
-      <SkillRanking :skills="current.ranking"/>
     </div>
 
   </div>
