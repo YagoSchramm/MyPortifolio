@@ -1,6 +1,8 @@
 <template>
+      <div class="mb-8">
       <SkillsNavbar />
     <RouterView />
+            </div>
 </template>
 
 <script setup>

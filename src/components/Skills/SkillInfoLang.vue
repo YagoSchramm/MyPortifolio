@@ -48,7 +48,7 @@ const current = computed(() => data[props.type] || data.frameworks)
         {{ current.title }}
       </p>
 
-      <SkillsList :items="current.skills"/>
+      <SkillsList :items="current.skills" :istools=false />
     </div>
 
     <div>
