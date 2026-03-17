@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from 'vue'
-import NavBrand from '../NabBar/NavBrand.vue'
+import NavBrand from '../NavBar/NavBrand.vue'
 import NavLinks from './NavLinks.vue'
-import NavStatus from '../NabBar/NavStatus.vue'
-import NavDrawer from '../NabBar/NavDrawer.vue'
+import NavStatus from '../NavBar/NavStatus.vue'
+import NavDrawer from '../NavBar/NavDrawer.vue'
 
 const isDrawerOpen = ref(false)
 

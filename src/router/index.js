@@ -10,6 +10,9 @@ import ContatoView from '@/views/ContatoView.vue'
 import LoginView from '@/views/LoginView.vue'
 import AdminView from '@/views/AdminView.vue'
 import BlogPostView from '@/views/BlogPostView.vue'
+import SkillInfoLang from '@/components/Skills/SkillInfoLang.vue'
+import SkillInfoFrame from '@/components/Skills/SkillInfoFrame.vue'
+import SkillInfoTools from '@/components/Skills/SkillInfoTools.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -44,11 +47,37 @@ const router = createRouter({
         },
       ],
     },
-    {
-      path: '/skills',
-      name: 'skills',
-      component: SkillsView,
-    },
+      {
+    path: "/skills",
+    name:"skills",
+    component: SkillsView,
+    children: [
+             {
+          path: '',
+             redirect: { name: 'frameworks' },
+          props: { type: "frameworks" }
+        },
+      {
+        
+        path: "frameworks",
+        name: "frameworks",
+        component: SkillInfoFrame,
+        props: { type: "frameworks" }
+      },
+      {
+        path: "languages",
+        name: "languages",
+        component: SkillInfoLang,
+        props: { type: "languages" }
+      },
+      {
+        path: "tools",
+        name: "tools",
+        component: SkillInfoTools,
+        props: { type: "tools" }
+      }
+    ]
+  },
     {
       path: '/blog',
       name: 'blog',

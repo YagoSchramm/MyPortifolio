@@ -1,15 +1,27 @@
 <script setup>
 defineProps({
-  name: { type: String, required: true },
-  icon: { type: String, required: true },
+  name: String,
+  icon: String
 })
 </script>
 
 <template>
-  <div class="flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm">
-    <span class="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-100">
-      <i :class="`text-xl ${icon}`"></i>
+  <div
+    class="group relative flex items-center gap-4 p-5 rounded-xl
+    bg-white/40 backdrop-blur-md
+    border border-white/20
+    shadow-md
+    transition-all duration-300
+    hover:shadow-xl
+    hover:-translate-y-1
+    hover:scale-[1.03]"
+  >
+
+    <i :class="icon + ' text-3xl group-hover:scale-110 transition'"></i>
+
+    <span class="font-medium text-lg">
+      {{ name }}
     </span>
-    <span class="text-sm font-semibold uppercase tracking-[0.2em] text-gray-700">{{ name }}</span>
+
   </div>
 </template>
