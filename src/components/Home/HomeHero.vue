@@ -5,6 +5,7 @@ import ProfileImageCard from '../Home/ProfileImageCard.vue'
 import SkillsGrid from '../Home/SkillsGrid.vue'
 import StatsGrid from '../Home/StatsGrid.vue'
 import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import gsap from 'gsap'
 
 onMounted(() => {
@@ -18,6 +19,11 @@ onMounted(() => {
   duration: 1.2,
   })
 })
+
+const router = useRouter()
+
+const goProjects = () => router.push({ name: 'projetos-carrossel' })
+const goBlog = () => router.push({ name: 'blog' })
 </script>
 
 <template>
@@ -47,8 +53,8 @@ onMounted(() => {
       <SkillsGrid />
 
       <div class="action-button flex mt-12 justify-center gap-4">
-        <IconActionButton icon="code-xml" label="Ver Projetos" />
-        <IconActionButton  icon="notebook-pen" label="Ler Blog" variant="light" />
+        <IconActionButton icon="code-xml" label="Ver Projetos" @click="goProjects" />
+        <IconActionButton  icon="notebook-pen" label="Ler Blog" variant="light" @click="goBlog" />
       </div>
     </div>
 

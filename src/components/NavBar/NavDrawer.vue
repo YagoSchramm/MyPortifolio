@@ -65,30 +65,6 @@ onBeforeUnmount(() => {
           </button>
         </div>
 
-        <div class="flex-1 px-6 py-6">
-          <div class="rounded-xl border border-gray-200 px-4 py-4">
-            <p class="text-xs font-semibold uppercase tracking-wide text-gray-400">Tema</p>
-            <div class="mt-3 grid grid-cols-2 gap-2">
-              <button
-                class="flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900"
-                type="button"
-                aria-pressed="true"
-              >
-                <i data-lucide="sun" class="h-4 w-4 text-gray-600"></i>
-                Claro
-              </button>
-              <button
-                class="flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-600"
-                type="button"
-                aria-pressed="false"
-              >
-                <i data-lucide="moon" class="h-4 w-4 text-gray-500"></i>
-                Escuro
-              </button>
-            </div>
-          </div>
-        </div>
-
         <div class="border-t border-gray-100 px-6 py-5">
           <RouterLink
             class="flex w-full items-center justify-between rounded-xl border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-900 hover:border-gray-300"

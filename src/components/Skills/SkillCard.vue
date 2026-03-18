@@ -1,4 +1,5 @@
 <script setup>
+import gsap from 'gsap';
 defineProps({
   name: String,
   icon: String

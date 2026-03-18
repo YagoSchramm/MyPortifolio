@@ -1,9 +1,10 @@
 <script setup>
-import { reactive, ref } from "vue"
+import { onMounted, reactive, ref } from "vue"
 import { sendContactEmail } from "@/features/emailjs/email"
 import InputField from "@/contato/InputField.vue"
 import TextAreaField from "@/contato/TextAreaField.vue"
 import SubmitButton from "@/contato/SubmitButton.vue"
+import gsap from "gsap"
 
 const form = reactive({
   name: "",
@@ -105,10 +106,18 @@ const handleSubmit = async () => {
     console.error(error)
   }
 }
+
+onMounted(() => {
+  gsap.from(".main-container", {
+    opacity: 0,
+    duration: 0.9,
+    ease: "power1.out",
+  })
+})
 </script>
 
 <template>
-  <section class="min-h-[calc(100vh-4rem)] bg-gradient-to-br from-slate-50 via-white to-slate-100">
+  <section class="main-container min-h-[calc(100vh-4rem)] bg-gradient-to-br from-slate-50 via-white to-slate-100">
        <p class="ml-8 mt-8 mb-8 text-[38px] font-bold font-sans whitespace-nowrap">
          Contato
        </p>

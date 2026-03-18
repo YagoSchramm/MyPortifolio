@@ -1,8 +1,9 @@
 <script setup>
-import { ref } from "vue"
+import { onMounted, ref } from "vue"
 import { useRouter } from "vue-router"
 import { signInAdmin } from "@/features/firebase/auth/auth"
 import StatusMessage from "@/components/Common/StatusMessage.vue"
+import gsap from "gsap"
 
 const router = useRouter()
 const email = ref("")
@@ -31,10 +32,18 @@ const handleSubmit = async () => {
     isLoading.value = false
   }
 }
+
+onMounted(() => {
+  gsap.from(".main-container", {
+    opacity: 0,
+    duration: 0.9,
+    ease: "power1.out",
+  })
+})
 </script>
 
 <template>
-  <div class="min-h-[calc(100vh-4rem)] bg-white px-6 py-16">
+  <div class="main-container min-h-[calc(100vh-4rem)] bg-white px-6 py-16">
     <div class="mx-auto w-full max-w-md">
       <StatusMessage v-if="message" class="mb-4" :type="messageType" :message="message" />
       <div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">

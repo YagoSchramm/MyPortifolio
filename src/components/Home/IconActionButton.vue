@@ -1,6 +1,7 @@
 <script setup>
 import useLucide from '../../composables/useLucide'
-defineProps({
+
+const props = defineProps({
   icon: {
     type: String,
     required: true,
@@ -15,12 +16,15 @@ defineProps({
   },
 })
 
+const emit = defineEmits(["click"])
+
 useLucide()
 </script>
 
 <template>
   <button
     type="button"
+    @click="emit('click')"
     class="flex items-center justify-center gap-2 px-12 py-3 rounded-full shadow transition whitespace-nowrap"
     :class="
       variant === 'light'

@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from "vue"
+import { computed, onMounted, ref } from "vue"
 import PostItem from "@/components/Admin/PostItem.vue"
 import {
   createPost,
@@ -7,6 +7,7 @@ import {
   listPosts,
   updatePost,
 } from "@/features/firebase/posts/posts"
+import gsap from "gsap"
 
 const posts = ref([])
 const title = ref("")
@@ -140,11 +141,18 @@ const handleDelete = async (post) => {
   }
 }
 
-loadPosts()
+onMounted(() => {
+  loadPosts()
+  gsap.from(".main-container", {
+    opacity: 0,
+    duration: 0.9,
+    ease: "power1.out",
+  })
+})
 </script>
 
 <template>
-  <div class="min-h-[calc(100vh-4rem)] bg-white px-6 py-12">
+  <div class="main-container min-h-[calc(100vh-4rem)] bg-white px-6 py-12">
     <div class="mx-auto w-full max-w-5xl">
       <header class="mb-8">
         <p class="text-xs font-semibold uppercase tracking-wide text-gray-400">Dashboard</p>
