@@ -1,6 +1,7 @@
 <script setup>
 import { onBeforeUnmount, onMounted } from 'vue'
 import useLucide from '../../composables/useLucide'
+import SocialActionButton from '../Home/SocialActionButton.vue'
 
 const props = defineProps({
   open: {
@@ -64,8 +65,19 @@ onBeforeUnmount(() => {
             <i data-lucide="x" class="h-5 w-5"></i>
           </button>
         </div>
-
-        <div class="border-t border-gray-100 px-6 py-5">
+        <div class="border-t border-gray-100 px-6 py-5 flex flex-col gap-3">
+          <SocialActionButton
+            icon="devicon-github-original"
+            label="YagoSchramm"
+            href="https://github.com/YagoSchramm"
+            @click="emit('close')"
+          />
+          <SocialActionButton
+            icon="devicon-linkedin-plain"
+            label="Yago Schramm"
+            href="https://www.linkedin.com/in/yago-schramm/"
+            @click="emit('close')"
+          />
           <RouterLink
             class="flex w-full items-center justify-between rounded-xl border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-900 hover:border-gray-300"
             to="/login"

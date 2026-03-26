@@ -7,7 +7,7 @@ import StatsGrid from '../Home/StatsGrid.vue'
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import gsap from 'gsap'
-
+import SocialActionButton from './SocialActionButton.vue'
 onMounted(() => {
   gsap.from('#hero-section', {
     opacity: 0,
@@ -51,11 +51,11 @@ const goBlog = () => router.push({ name: 'blog' })
       </div>
 
       <SkillsGrid />
-
       <div class="action-button flex mt-12 justify-center gap-4">
         <IconActionButton icon="code-xml" label="Ver Projetos" @click="goProjects" />
         <IconActionButton  icon="notebook-pen" label="Ler Blog" variant="light" @click="goBlog" />
       </div>
+    
     </div>
 
     <div class="lg:justify-self-end w-full max-w-[420px] space-y-4">
@@ -63,4 +63,5 @@ const goBlog = () => router.push({ name: 'blog' })
       <StatsGrid />
     </div>
   </section>
+
 </template>
