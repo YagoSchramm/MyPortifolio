@@ -43,13 +43,7 @@ const current = computed(() => data[props.type] || data.frameworks)
       <SkillsList :items="current.skills"/>
     </div>
 
-    <div>
-      <p class="text-2xl font-semibold mb-6">
-        Nível de Proficiência
-      </p>
 
-      <SkillRanking :skills="current.ranking"/>
-    </div>
 
   </div>
 
