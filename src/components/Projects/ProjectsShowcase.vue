@@ -5,12 +5,14 @@ import ProjectsArrowButton from './ProjectsArrowButton.vue';
 
 const baseUrl = import.meta.env.BASE_URL;
 const projects = ref([
- { id: 1, img: `${baseUrl}images/Sprinter.png`, title: 'Sprinter', desc: 'Um aplicativo de monitoramento de atividades físicas focado na sustentabilidade, onde você pode realizar atividades, e com os pontos adiquiridos pelas atividades e comprar ingressos', language: 'Flutter, Dart, Firebase', githubUrl: 'https://github.com/Yago3108/Sprinter', isOnline: false },
+  { id: 1, img: `${baseUrl}images/Sprinter.png`, title: 'Sprinter', desc: 'Um aplicativo de monitoramento de atividades físicas focado na sustentabilidade, onde você pode realizar atividades, e com os pontos adiquiridos pelas atividades e comprar ingressos', language: 'Flutter, Dart, Firebase', githubUrl: 'https://github.com/Yago3108/Sprinter', isOnline: false },
   { id: 2, img: `${baseUrl}images/GoApi.png`, title: 'GO CRUD', desc: 'Uma API REST básica com um CRUD de produtos e com deploy via Docker.', language: 'GO, Gin, PostgreSQL', githubUrl: 'https://github.com/YagoSchramm/BasicGoApi', isOnline: true },
   { id: 3, img: `${baseUrl}images/NodeApi.png`, title: 'Node.js CRUD', desc: 'Uma API REST básica com um CRUD de clientes e com front-end em pug e bootstrap.', language: 'TypeScript, Node, Express, Pug', githubUrl: 'https://github.com/YagoSchramm/NodeBasicApi', isOnline: false},
   { id: 4, img: `${baseUrl}images/MakeYourBurguer.png`, title: 'Make Your Burguer', desc: 'Uma aplicação de monitoramento de pedidos de uma hambúrgueria que permite a criação de um hamburguer ao estilo do cliente.', language: 'Vue, GSAP, JSON server', githubUrl: 'https://github.com/YagoSchramm/MakeYourBurguer', isOnline: false },
   { id: 5, img: `${baseUrl}images/MyChat.png`, title: 'MyChat', desc: 'Um aplicativo de mensagens focado em criar novas conexões e uma experiência de usuário aprimorada.', language: 'Flutter, Dart', githubUrl: 'https://github.com/YagoSchramm/MyChat', isOnline: false },
   { id: 6, img: `${baseUrl}images/MyChatApi.png`, title: 'API MyChat', desc: 'Uma API com websocket desenvolvida para melhor experiência de usuário do aplicativo MyChat.', language: 'Go, Gin, PostgreSQL, Supabase', githubUrl: 'https://github.com/YagoSchramm/ApiMyChat', isOnline: false },
+  {id:7,img: `${baseUrl}images/GoLinkr.png`,title:'GoLinkr',desc:'Golinkr é uma api dedicada a fazer o encurtamento de urls de maneiras simples e gerar métricas de uso do link encurtado.',language:'Go, Gorilla Mux, PostgresSQL', githubUrl:'https://github.com/YagoSchramm/GoLinkr',isOnline:false}
+  {id:7,img: `${baseUrl}images/GoDepot.png`,title:'GoLinkr',desc:'GoDepot é uma api dedicada a guardar imagens, vídeos e outros tipos de mídia digital, também é disponibilizado um serviço de mudança de formato de arquivo.',language:'Go, Gorilla Mux, FsNotify, PostgresSQL', githubUrl:'https://github.com/YagoSchramm/GoDepot',isOnline:false}
 ]);
 
 const currentIndex = ref(0);
