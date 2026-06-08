@@ -12,7 +12,7 @@ const projects = ref([
   { id: 5, img: `${baseUrl}images/MyChat.png`, title: 'MyChat', desc: 'Um aplicativo de mensagens focado em criar novas conexões e uma experiência de usuário aprimorada.', language: 'Flutter, Dart', githubUrl: 'https://github.com/YagoSchramm/MyChat', isOnline: false },
   { id: 6, img: `${baseUrl}images/MyChatApi.png`, title: 'API MyChat', desc: 'Uma API com websocket desenvolvida para melhor experiência de usuário do aplicativo MyChat.', language: 'Go, Gin, PostgreSQL, Supabase', githubUrl: 'https://github.com/YagoSchramm/ApiMyChat', isOnline: false },
   {id:7,img: `${baseUrl}images/GoLinkr.png`,title:'GoLinkr',desc:'Golinkr é uma api dedicada a fazer o encurtamento de urls de maneiras simples e gerar métricas de uso do link encurtado.',language:'Go, Gorilla Mux, PostgresSQL', githubUrl:'https://github.com/YagoSchramm/GoLinkr',isOnline:false},
-  {id:7,img: `${baseUrl}images/GoDepot.png`,title:'GoLinkr',desc:'GoDepot é uma api dedicada a guardar imagens, vídeos e outros tipos de mídia digital, também é disponibilizado um serviço de mudança de formato de arquivo.',language:'Go, Gorilla Mux, FsNotify, PostgresSQL', githubUrl:'https://github.com/YagoSchramm/GoDepot',isOnline:false}
+  {id:8,img: `${baseUrl}images/GoDepot.png`,title:'GoDepot',desc:'GoDepot é uma api dedicada a guardar imagens, vídeos e outros tipos de mídia digital, também é disponibilizado um serviço de mudança de formato de arquivo.',language:'Go, Gorilla Mux, FsNotify, PostgresSQL', githubUrl:'https://github.com/YagoSchramm/GoDepot',isOnline:false}
 ]);
 
 const currentIndex = ref(0);
